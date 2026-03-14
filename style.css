@@ -1,0 +1,571 @@
+/* =========================
+   CYBER THEME VARIABLES
+========================= */
+
+:root{
+--cyber-purple:#c46efe;
+--cyber-purple-strong:#b026ff;
+--cyber-purple-deep:#7c00ff;
+
+--bg-main:#0f0f14;
+--bg-dark:#161719;
+--bg-card:rgba(25,25,35,0.55);
+
+--text-light:#dee2e6;
+
+--border:rgba(196,110,254,0.35);
+--glow:0 0 18px rgba(196,110,254,0.45);
+--glow-strong:0 0 25px rgba(196,110,254,0.7);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+html{
+scroll-behavior:smooth;
+}
+
+body{
+padding-top:80px;
+background:var(--bg-main);
+color:var(--text-light);
+font-family:'Electrolize',sans-serif;
+overflow-x:hidden;
+}
+
+@media (prefers-reduced-motion: reduce){
+*{
+animation:none !important;
+transition:none !important;
+}
+}
+
+a:focus,
+button:focus{
+outline:2px solid var(--cyber-purple);
+outline-offset:2px;
+}
+
+/* scanline effect */
+
+body::after{
+content:"";
+position:fixed;
+inset:0;
+background:repeating-linear-gradient(
+to bottom,
+rgba(255,255,255,0.02),
+rgba(255,255,255,0.02) 1px,
+transparent 1px,
+transparent 3px
+);
+pointer-events:none;
+z-index:0;
+}
+
+/*Cyber attack animations*/
+#cyberAttacks{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-1;
+overflow:hidden;
+}
+
+.attack{
+position:absolute;
+height:2px;
+background:linear-gradient(90deg, transparent, #c46efe);
+opacity:.8;
+animation:attackMove linear forwards;
+}
+
+@keyframes attackMove{
+from{
+transform:translate(0,0);
+opacity:1;
+}
+to{
+transform:translate(var(--dx), var(--dy));
+opacity:0;
+}
+}
+
+/* =========================
+   MATRIX CANVAS
+========================= */
+
+#matrixCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+background:#0f0f14;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,h2,h3,h4,h5,h6{
+font-family:'Electrolize',sans-serif;
+}
+
+h2,h3{
+color:var(--cyber-purple);
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+color:var(--cyber-purple);
+text-decoration:none;
+}
+
+a:hover{
+color:var(--cyber-purple-strong);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+background:transparent;
+border:1px solid var(--cyber-purple);
+color:var(--cyber-purple);
+transition:transform .35s ease, box-shadow .35s ease;}
+
+.btn:hover{
+background:var(--cyber-purple);
+color:#000;
+box-shadow:var(--glow);
+}
+
+/* glowing animated buttons */
+
+@keyframes neonPulse{
+0%{box-shadow:0 0 5px rgba(196,110,254,0.5);}
+50%{box-shadow:0 0 18px rgba(196,110,254,1);}
+100%{box-shadow:0 0 5px rgba(196,110,254,0.5);}
+}
+
+.btn-primary,
+.btn-secondary{
+animation:neonPulse 2.5s infinite;
+}
+
+/* =========================
+   CYBER TERMINAL INTRO
+========================= */
+
+#terminalIntro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(10,10,15,0.85);
+backdrop-filter:blur(3px);
+z-index:9999;
+transition:opacity .8s ease;
+}
+
+/* terminal window */
+
+.terminal-box{
+
+width:600px;
+max-width:90%;
+
+background:#0b0b10;
+border:1px solid rgba(196,110,254,0.4);
+border-radius:8px;
+
+box-shadow:
+0 0 20px rgba(196,110,254,0.5),
+0 0 40px rgba(196,110,254,0.2);
+
+font-family:monospace;
+color:#c46efe;
+
+}
+
+/* header */
+.icon{
+color:#c46efe;
+font-size:2.2rem;
+text-shadow:
+0 0 8px #c46efe,
+0 0 15px rgba(196,110,254,0.6);
+}
+
+.terminal-header{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+padding:8px 12px;
+border-bottom:1px solid rgba(196,110,254,0.3);
+
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+display:inline-block;
+}
+
+.red{background:#ff5f56;}
+.yellow{background:#ffbd2e;}
+.green{background:#27c93f;}
+
+.terminal-title{
+margin-left:auto;
+font-size:.8rem;
+color:#aaa;
+}
+
+/* text area */
+
+#terminalText{
+
+padding:20px;
+font-size:1rem;
+min-height:120px;
+
+}
+
+/* cursor */
+
+#terminalText::after{
+content:"█";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.nav-link{
+position:relative;
+}
+
+.nav-link::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0%;
+height:2px;
+background:var(--cyber-purple);
+transition:width .3s ease;
+}
+
+.nav-link:hover::after{
+width:100%;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+backdrop-filter:blur(8px);
+background:rgba(0,0,0,0.6);
+transition:transform .3s ease;
+z-index:1000;
+}
+
+header.hide{
+transform:translateY(-100%);
+}
+
+.navbar-brand{
+font-size:1.5rem;
+color:var(--cyber-purple)!important;
+}
+
+.nav-link{
+font-size:1.1rem;
+color:var(--cyber-purple)!important;
+}
+
+.nav-link:hover{
+text-shadow:0 0 8px var(--cyber-purple);
+}
+
+.navbar-toggler{
+border-color:var(--cyber-purple);
+}
+
+.navbar-toggler-icon{
+filter:invert(1);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+background:var(--bg-card);
+backdrop-filter:blur(14px);
+border:1px solid var(--border);
+border-radius:14px;
+padding:3rem 1.5rem;
+transition:transform .35s ease, box-shadow .35s ease;margin-bottom:30px;
+}
+
+section:hover{
+border-color:var(--cyber-purple);
+box-shadow:var(--glow);
+}
+
+.section-title:hover{
+text-shadow:
+0 0 10px rgba(196,110,254,0.8),
+0 0 20px rgba(196,110,254,0.6);
+}
+
+.section-title{
+border-left:4px solid var(--cyber-purple);
+padding-left:10px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#hero{
+text-align:center;
+border-radius:14px;
+padding:4rem 1rem;
+background:var(--bg-card);
+border:1px solid var(--border);
+backdrop-filter:blur(14px);
+}
+
+
+#hero h1{
+font-size:3rem;
+margin-bottom:20px;
+text-shadow:0 0 12px rgba(196,110,254,0.7);
+}
+
+#hero p{
+font-size:1.3rem;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.progress-bar{
+height:10px;
+border-radius:20px;
+background:linear-gradient(90deg,#6a00ff,#a855f7,#c084fc);
+background-size:200% 200%;
+animation:gradientMove 3s ease infinite;
+box-shadow:
+0 0 10px rgba(168,85,247,.7),
+0 0 20px rgba(168,85,247,.5);
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+background:var(--bg-card);
+backdrop-filter:blur(14px);
+border:1px solid var(--border);
+border-radius:14px;
+transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:var(--glow-strong);
+border-color:var(--cyber-purple);
+}
+
+/* =========================
+   PROJECT GALLERY
+========================= */
+
+.project-card{
+position:relative;
+overflow:hidden;
+border-radius:12px;
+}
+
+.project-img{
+transition:transform .45s ease;
+}
+
+.project-card:hover .project-img{
+transform:scale(1.06);
+}
+
+.project-card:hover{
+box-shadow:
+0 0 12px rgba(196,110,254,0.4),
+0 0 25px rgba(196,110,254,0.6);
+}
+
+/* overlay links */
+
+.project-links{
+position:absolute;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:8px;
+background:rgba(20,10,35,0.75);
+padding:6px 10px;
+border-radius:8px;
+opacity:0;
+transition:opacity .3s ease;
+}
+
+.project-card:hover .project-links{
+opacity:1;
+box-shadow:var(--glow);
+}
+
+.project-links .btn{
+font-size:.8rem;
+padding:4px 8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact form{
+background:var(--bg-card);
+border:1px solid var(--border);
+padding:25px;
+border-radius:12px;
+}
+
+#contact .form-control{
+background:var(--bg-dark);
+border:1px solid rgba(196,110,254,0.4);
+color:var(--text-light);
+}
+
+#contact .form-control:focus{
+border-color:var(--cyber-purple);
+box-shadow:0 0 0 .25rem rgba(196,110,254,.5);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:var(--bg-dark);
+border-top:1px solid rgba(196,110,254,0.3);
+padding:15px 0;
+text-align:center;
+color:var(--cyber-purple);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--cyber-purple);
+border-radius:10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+#hero h1{
+font-size:2.2rem;
+text-shadow:0 0 12px rgba(196,110,254,0.7);
+}
+
+#hero p{
+font-size:1.1rem;
+}
+
+.nav-link{
+font-size:1rem;
+}
+
+.project-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+/* =========================
+   CYBER GRID BACKGROUND
+========================= */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+
+background-image:
+linear-gradient(rgba(196,110,254,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(196,110,254,0.05) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+pointer-events:none;
+z-index:-1;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:transform .35s ease, box-shadow .35s ease;}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}

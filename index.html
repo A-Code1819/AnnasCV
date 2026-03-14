@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="Anna Kwas Portfolio">
+    <meta property="og:description" content="Cybersecurity Analyst Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./pics/AnnaKwas.png">
+    <meta property="og:url" content="https://a-code1819.github.io/Cybersecurity-pswd-tool/">
+    <title>Anna Kwas | Cybersecurity Analyst Portfolio</title>
+    <meta name="description" content="My Portfolio" />
+    <meta name="keywords" content="web design, web development, programming, cybersecurity" />
+    <meta name="author" content="Anna Kwas" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous">
+    </script>
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/b708182106.js" crossorigin="anonymous" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="./pics/crossfavicon.png"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80" tabindex="0">
+    <div id="cyberAttacks"></div>
+    <div id="terminalIntro">
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">security-console</span>
+        </div>
+
+        <pre id="terminalText"></pre>
+      </div>
+    </div>
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="sticky-top">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#home">
+            <i class="fa-solid fa-cross icon"></i> Anna Kwas
+          </a>
+
+          <button
+            class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="home" class="container py-5 mb-5">
+      <!-- Hero -->
+       <section id="hero">
+      <div class="row align-items-center g-4 mb-5 reveal">
+        <div class="col-md-7">
+          <h1 class="h2 mb-3 gradient-text">Cybersecurity Analyst & Threat Detection Specialist</h1>
+          <p class="hero-subtitle text-secondary mb-0">
+            Hands-on experience in SIEM, Linux, networking fundamentals and incident response.
+            Focused on protecting systems and improving security posture.
+          </p>
+        </div>
+        <div class="col-md-5 text-center">
+          <img
+            src="./pics/annakwas.png"
+            alt="Anna Kwas Portrait"
+            class="img-fluid hero-img"
+            width="400"
+            height="400"/>
+        </div>
+        <div class="mt-4">
+           <a href="https://a-code1819.github.io/SurveyForm/" class="btn btn-primary me-2">
+           <i class="fa-solid fa-paper-plane me-1"></i> Hire Me
+          </a>
+          <a href="./AnnaKwasResume.pdf" class="btn btn-secondary me-2" download>
+             <i class="fa-solid fa-file-arrow-down me-1"></i> Download CV
+          </a>
+  
+           <a href="#projects" class="btn btn-primary me-2">See My Work</a>
+        </div>
+      </div>
+      </section>
+      <!-- About -->
+      <section id="about" class="mb-5 reveal">
+        <h2 class="section-title h3 mb-3">About Me</h2>
+        <p>
+          Cybersecurity-focused professional with a background in web development and IT support. 
+          Experienced in troubleshooting, system security fundamentals, and network analysis. 
+          Over the past 18 months, I have dedicated myself to developing practical knowledge in 
+          SIEM tools, Linux systems, and incident response methodologies.
+
+          Driven by continuous learning and a strong analytical mindset, 
+          I am seeking a Junior Cybersecurity or SOC Analyst role where I can contribute to 
+          protecting systems and strengthening organizational security posture.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="mb-5 reveal">
+        <h3 class="section-title h4 mb-4">My Skills</h3>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card card-ghost p-3 h-100">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-3">
+                  <i class="fa-solid fa-code me-2"></i>
+                  HTML, CSS3, JavaScript, Bootstrap
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="90"></div></div>
+                </li>
+                <li class="mb-3">
+                  <i class="fa-solid fa-network-wired me-2"></i>
+                  Internet Protocols
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="80"></div></div>
+                </li>
+                <li class="mb-3">
+                  <i class="fa-brands fa-python me-2"></i>
+                  Python (beginner–intermediate)
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="60"></div></div>
+                </li>
+                <li class="mb-1">
+                  <i class="fa-solid fa-screwdriver-wrench me-2"></i>
+                  Troubleshooting (Windows 10/11, Android)
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="85"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-ghost p-3 h-100">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-3">
+                  <i class="fa-solid fa-lock me-2"></i>
+                  SIEM tools / IDS (entry level)
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="55"></div></div>
+                </li>
+                <li class="mb-3">
+                  <i class="fa-solid fa-terminal me-2"></i>
+                  Linux & SQL (entry level)
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="60"></div></div>
+                </li>
+                <li class="mb-1">
+                  <i class="fa-solid fa-user-tie me-2"></i>
+                  Professional Demeanor & Customer Care
+                  <div class="progress mt-2"><div class="progress-bar" data-progress="95"></div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="mb-5 reveal">
+        <h3 class="section-title h4 mb-3">My Experience</h3>
+        <div class="card card-ghost p-3">
+          <h4 class="h5 mb-1">Customer Representative | Everise (American Airlines Account) <span class="text-white-50">| November 2025 - Present</span></h4>
+          <p class="mb-0">
+            Currently assisting over 40+ customers daily with their reservations 
+            whether it's due to involuntary changes to their reservations, 
+            canceled flights, or a Travel Notice, also booking new reservations, 
+            providing up to date information regarding American Airlines products 
+            and fare prices meeting with customer needs.
+          </p>
+        </div>
+        
+        <div class="card card-ghost p-3">
+          <h4 class="h5 mb-1">AI Teacher | Christian American School (CAS) <span class="text-white-50">| August 2025 - October 2025</span></h4>
+          <p class="mb-0">
+            Taught middle schoolers 
+            and high schoolers the Christian perspective of AI 
+            and how to use it cautiously instead of reckless, 
+            teaching them algorithms and study projects.
+          </p>
+        </div>
+        
+        <div class="card card-ghost p-3">
+          <h4 class="h5 mb-1">Technical Support |Teleperformance (COX Communications Account) <span class="text-white-50">| October 2023 - December 2023</span></h4>
+          <p class="mb-0">
+            Assisted 40+ customers daily with technical troubleshooting while maintaining data confidentiality.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="mb-5 reveal">
+        <h3 class="section-title h4 mb-4">My Education</h3>
+
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="card card-ghost h-100">
+              <div class="card-body">
+                <h4 class="h6 mb-2">Google <strong>Cybersecurity Analyst</strong> | August 2024</h4>
+                <p class="mb-3">
+                  8 courses with hands-on assessments: Python (beginner), Linux, SQL, SIEM tools and IDS; risk,
+                  threats and vulnerabilities; mitigation techniques.
+                </p>
+                <img
+                  src="./pics/cybersecert.png"
+                  alt="Google Cybersecurity Analyst Certificate"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+
+           <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card card-ghost h-100">
+              <div class="card-body">
+                <h4 class="h6 mb-2">CompTIA Diploma<strong> Security+ Exam SYO-501</strong> | August 2023</h4>
+                <p class="mb-3">
+                  Fundamental knowledge required of any cybersecurity role and provides a springboard to intermediate-level
+                  cybersecurity jobs. From risk management to incident response, this certification covers the essential principles for network security and risk management.
+                </p>
+                <img
+                  src="./pics/comptia.jpeg"
+                  alt="CompTIA Security Cert"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-ghost h-100">
+              <div class="card-body">
+                <h4 class="h6 mb-2">Google <strong>IT Support</strong> | February 2023</h4>
+                <p class="mb-3">
+                  Entry-level IT support: networking, operating systems, system administration and security with
+                  practical assessments and customer service orientation.
+                </p>
+                <img
+                  src="./pics/itcert.png"
+                  alt="Google IT Support Certificate"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-ghost h-100">
+              <div class="card-body">
+                <h4 class="h6 mb-2">Generation <strong>Web Development</strong> | December 2021</h4>
+                <p class="mb-3">
+                  12-week program in HTML, CSS, JavaScript and UX-oriented front-end projects.
+                </p>
+                <img
+                  src="./pics/generationcert.png"
+                  alt="Generation Web Development Certificate"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-ghost h-100">
+              <div class="card-body">
+                <h4 class="h6 mb-2">University of London <strong>Coding Basics</strong> | November 2021</h4>
+                <p class="mb-3">
+                  Problem-solving in real scenarios and building a responsive web page with HTML, CSS, JavaScript, and Bootstrap.
+                </p>
+                <img
+                  src="./pics/codingbasic.jpg"
+                  alt="University of London Coding Basics Certificate"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card card-ghost">
+              <div class="card-body">
+                <h4 class="h6 mb-1">High School Diploma | December 2020</h4>
+                <p class="mb-3">Graduated with a 3.14 GPA. Miami, FL.</p>
+                <img
+                  src="./pics/highschooldiploma.jpg"
+                  alt="High School Diploma"
+                  class="img-fluid rounded"
+                  style="max-height: 180px; object-fit: cover;"
+                  loading="lazy"
+                  />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="mb-5 reveal cyber-glow">
+        <h3 class="section-title h4 mb-3">My Projects</h3>
+        <br>
+        <div class="card card-ghost p-3 mb-4">
+          <h4 class="h5">Python Network Scanner</h4>
+
+           <p>
+             Developed a Python-based network scanner capable of detecting active hosts
+             and open ports within a local network. The tool uses socket connections
+             and threading to identify potential security exposures.
+            </p>
+           <div class="mt-2">
+             <a href="https://a-code1819.github.io/NetworkScanner/"
+                target="_blank"
+                class="btn btn-primary">
+                <i class="fa-brands fa-github"></i> View Network Scanner</a>
+           </div>
+        </div>
+        <div class="card card-ghost p-3 mb-4">
+          <h4 class="h5">Password Security Detection Tool (PWSD)</h4>
+
+          <p>
+            Developed a Python-based password security tool designed to evaluate
+            password strength and detect common vulnerabilities. The program analyzes
+            password complexity, checks for common patterns, and helps users improve
+            their password security practices.
+          </p>
+          <div class="mt-2">
+            <a href="https://a-code1819.github.io/Cybersecurity-pswd-tool/"
+               target="_blank"
+               class="btn btn-primary">
+              <i class="fa-brands fa-github"></i> View Password Tool
+            </a>
+          </div>
+        </div>
+        <h3 class="card-header card-body">Home Network Security Hardening</h3>
+        <p class="card-text">
+          Designed and maintained a secure home network environment by implementing 
+          modern encryption protocols, firewall configurations, firmware updates, 
+          and device access control. Conducted data exposure evaluations and 
+          applied security best practices to minimize risk.
+        </p>
+
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item">Configured WPA3 encryption & disabled insecure protocols</li>
+          <li class="list-group-item">Updated router firmware and patched vulnerabilities</li>
+          <li class="list-group-item">Segmented devices where applicable</li>
+          <li class="list-group-item">Monitored connected devices and traffic</li>
+          <li class="list-group-item">Performed email/data leak exposure checks</li>
+        </ul>
+        <br>
+
+        <div id="carouselExampleIndicators" class="carousel slide card-ghost p-2 mb-3">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="./pics/surveyform.png" class="d-block w-100" alt="My Survey Page" data-bs-toggle="modal" data-bs-target="#projectModal" data-img="./pics/surveyform.png" loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="./pics/tributepage.png" class="d-block w-100" alt="My Tribute Page" data-bs-toggle="modal" data-bs-target="#projectModal" data-img="./pics/tributepage.png" loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="./pics/technicalpage.png" class="d-block w-100" alt="My Technical Page" data-bs-toggle="modal" data-bs-target="#projectModal" data-img="./pics/technicalpage.png" loading="lazy"/>
+            </div>
+            <div class="carousel-item">
+              <img src="./pics/plp.png" class="d-block w-100" alt="My Product Landing Page" data-bs-toggle="modal" data-bs-target="#projectModal" data-img="./pics/plp.png" loading="lazy"/>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+          <div class="d-flex justify-content-center gap-2 flex-wrap mt-2">
+            <a href="https://a-code1819.github.io/SurveyForm/" target="_blank" class="btn btn-primary">Professional Feedback Survey</a>
+            <a href="https://a-code1819.github.io/TributePage/" target="_blank" class="btn btn-primary">Tribute Page</a>
+            <a href="https://a-code1819.github.io/HTMLdoc/" target="_blank" class="btn btn-primary">HTML Page</a>
+            <a href="https://a-code1819.github.io/PLP/" target="_blank" class="btn btn-primary">Product Landing Page</a>
+          </div>
+
+        <!-- Project Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content card-ghost">
+              <div class="modal-header">
+                <h5 class="modal-title">Project Preview</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img id="modalImg" src="" alt="Project" class="img-fluid rounded" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="mb-5 reveal cyber-glow">
+        <h3 id="contact-title" class="section-title h4 mb-3">Contact Me</h3>
+        <form role="form" action="https://formspree.io/f/xgedeoel" method="POST" class="card card-ghost p-3">
+          <!-- Honeypot field (hidden from users) -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required />
+                <label for="name">Name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" name="_replyto" placeholder="email@example.com" required />
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea class="form-control" id="message" name="message" placeholder="Write your message" required></textarea>
+                <label for="message">Message</label>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex gap-2">
+              <button type="submit" class="btn btn-purple">
+                <i class="fa-regular fa-paper-plane me-1"></i> Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Back to top -->
+    <button id="backToTop" class="btn rounded-circle">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="border-top py-4">
+      <div class="container d-flex flex-wrap align-items-center gap-2 justify-content-between">
+        <div class="d-flex gap-2">
+         <a class="btn btn-outline-light btn-sm"
+   href="https://github.com/A-Code1819"
+   aria-label="GitHub Profile">
+            <i class="fa-brands fa-github me-1"></i> GitHub
+          </a>
+          <a class="btn btn-outline-light btn-sm" href="https://linkedin.com/in/anna-kwas/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+          </a>
+          <a class="btn btn-outline-light btn-sm" href="tel:+50247832193" aria-label="Call me">
+            <i class="fa-solid fa-phone me-1"></i> +(502)4783-2193
+          </a>
+          <a class="btn btn-outline-light btn-sm" href="mailto:kwas.anna@yahoo.com" aria-label="Email me">
+            <i class="fa-brands fa-yahoo me-1"></i> kwas.anna@yahoo.com
+          </a>
+        </div>
+        <p class="mb-0 text-white-50"> &copy; 2021-2026 Anna Kwas. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anna Kwas",
+        "jobTitle": "Cybersecurity Analyst",
+        "url": "",
+        "sameAs": [
+        "https://github.com/A-Code1819",
+        "https://linkedin.com/in/anna-kwas"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Anna Kwas Portfolio",
+      "url": "",
+      "description": "Portfolio showcasing the skills, experience, education, and projects of Anna Kwas, a cybersecurity analyst.",
+      "keywords": "cybersecurity, analyst, portfolio, projects, experience, education" 
+}
+</script>
+    <script>
+      // ============ Cyber attack animation (for fun) ============
+      const attackLayer = document.getElementById("cyberAttacks");
+
+      function createAttack(){
+
+        const el = document.createElement("div");
+        el.className = "attack";
+
+        const startX = Math.random() * window.innerWidth;
+        const startY = Math.random() * window.innerHeight;
+
+        const targetX = window.innerWidth/2;
+        const targetY = window.innerHeight/2;
+
+        const dx = targetX - startX;
+        const dy = targetY - startY;
+
+        el.style.left = startX + "px";
+        el.style.top = startY + "px";
+
+        el.style.setProperty("--dx", dx + "px");
+        el.style.setProperty("--dy", dy + "px");
+
+        const duration = 2000 + Math.random()*2000;
+
+        el.style.width = (30 + Math.random()*100) + "px";
+        el.style.animationDuration = duration + "ms";
+
+        attackLayer.appendChild(el);
+
+        setTimeout(()=>el.remove(), duration);
+
+      }
+
+      setInterval(createAttack, 600);
+     // ============ Fetch GitHub repos (for demo purposes) ============ 
+      fetch("https://api.github.com/users/A-Code1819/repos")
+        .then(response => response.json())
+        .then(data => console.log("GitHub Repositories:", data))
+        .catch(error => console.error("Error fetching GitHub repos:", error));
+
+
+      // ============ Reveal on scroll (IntersectionObserver) ============
+      (function revealOnScroll(){
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add("show");
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        els.forEach(el => io.observe(el));
+      })();
+
+      // ============ Animate skill progress bars ============
+      (function animateProgress(){
+        const bars = document.querySelectorAll(".progress-bar");
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              const el = e.target;
+              const pct = el.getAttribute("data-progress") || 0;
+              requestAnimationFrame(() => { el.style.width = pct + "%"; });
+              io.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+        bars.forEach(b => io.observe(b));
+      })();
+
+      // ============ Back to top ============
+      (function backToTop(){
+        const btn = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 400) btn.classList.add("show");
+          else btn.classList.remove("show");
+        });
+        btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      })();
+
+      // ============ Projects modal (click image -> modal) ============
+      (function projectModal(){
+        const modal = document.getElementById("projectModal");
+        const modalImg = document.getElementById("modalImg");
+        if (!modal || !modalImg) return;
+        document.querySelectorAll('#projects img[data-bs-target="#projectModal"]').forEach(img => {
+          img.addEventListener("click", () => {
+            const src = img.getAttribute("data-img") || img.src;
+            modalImg.src = src;
+          });
+        });
+      })();
+  
+      // ============ Matrix background animation ============
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      const letters = "01";
+      const special = "✝";
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = [];
+
+      for (let x = 0; x < columns; x++) {
+      drops[x] = 1;
+      }
+
+function drawMatrix() {
+
+  ctx.fillStyle = "rgba(15, 15, 20, 0.07)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+
+    let text;
+
+    // 1% chance to display a cross
+    if (Math.random() < 0.05) {
+      text = special;
+      ctx.fillStyle = "#ffffff"; // brighter cross
+    } else {
+      text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillStyle = "#c46efe"; // normal purple matrix
+    }
+
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+      drops[i] = 0;
+
+    drops[i]++;
+  }
+}
+
+  function animateMatrix(){
+  drawMatrix();
+  requestAnimationFrame(animateMatrix);
+}
+
+animateMatrix();
+
+if(window.innerWidth < 768){
+  canvas.style.display = "none";
+}
+
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > 100 && scrollTop > lastScrollTop) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
+  // ============ Terminal Intro Animation ============
+if(sessionStorage.getItem("introPlayed")){
+  terminalIntro.style.display="none";
+}
+
+const lines = [
+"> initializing security interface...",
+"> connecting to github repositories...",
+"> loading projects...",
+"> verifying credentials...",
+"> access granted",
+"> fetching repositories...",
+"> launching portfolio..."
+];
+
+let lineIndex = 0;
+let charIndex = 0;
+
+const terminal = document.getElementById("terminalText");
+
+function typeLine(){
+
+if(lineIndex < lines.length){
+
+if(charIndex < lines[lineIndex].length){
+
+terminal.textContent += lines[lineIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(typeLine,35);
+
+}else{
+
+terminal.textContent += "\n";
+
+lineIndex++;
+charIndex = 0;
+
+setTimeout(typeLine,450);
+
+}
+
+}else{
+
+setTimeout(()=>{
+
+document.getElementById("terminalIntro").style.opacity="0";
+
+setTimeout(()=>{
+document.getElementById("terminalIntro").style.display="none";
+},800);
+
+},800);
+}
+}
+typeLine();
+
+</script>
+</body>
+</html>
