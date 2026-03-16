@@ -52,7 +52,7 @@
       <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
           <a class="navbar-brand fw-bold" href="#home">
-            <i class="fa-solid fa-cross icon"></i> Anna Kwas
+            <span class="icon">✝</span> Anna Kwas
           </a>
 
           <button
@@ -238,7 +238,7 @@
             </div>
           </div>
 
-           <div class="row g-4">
+      
           <div class="col-md-6">
             <div class="card card-ghost h-100">
               <div class="card-body">
@@ -333,11 +333,15 @@
         <div class="card card-ghost p-3 mb-4">
           <h4 class="h5">Python Network Scanner</h4>
 
-           <p>
-             Developed a Python-based network scanner capable of detecting active hosts
-             and open ports within a local network. The tool uses socket connections
-             and threading to identify potential security exposures.
-            </p>
+          <p><strong>Tools:</strong> Python, socket, threading</p>
+
+          <ul>
+            <li>Scans local network for active hosts</li>
+            <li>Detects open ports using socket connections</li>
+            <li>Uses threading to accelerate scanning</li>
+            <li>Helps identify potential attack surfaces</li>
+          </ul>
+          
            <div class="mt-2">
              <a href="https://a-code1819.github.io/NetworkScanner/"
                 target="_blank"
@@ -566,8 +570,6 @@
         .then(response => response.json())
         .then(data => console.log("GitHub Repositories:", data))
         .catch(error => console.error("Error fetching GitHub repos:", error));
-      console.log("GitHub Repositories:", data);
-
 
       // ============ Reveal on scroll (IntersectionObserver) ============
       (function revealOnScroll(){
@@ -631,6 +633,8 @@
         canvas.width = window.innerWidth;
       });
 
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
       const letters = "01";
       const special = "✝";
       const fontSize = 14;
@@ -707,7 +711,6 @@ const lines = [
 "> loading projects...",
 "> verifying credentials...",
 "> access granted",
-"> fetching repositories...",
 "> launching portfolio..."
 ];
 
