@@ -49,18 +49,19 @@ outline-offset:2px;
 /* scanline effect */
 
 body::after{
-content:"";
-position:fixed;
-inset:0;
-background:repeating-linear-gradient(
-to bottom,
-rgba(255,255,255,0.02),
-rgba(255,255,255,0.02) 1px,
-transparent 1px,
-transparent 3px
-);
-pointer-events:none;
-z-index:0;
+  opacity:0.3;
+   content:"";
+   position:fixed;
+   inset:0;
+   background:repeating-linear-gradient(
+   to bottom,
+   rgba(255,255,255,0.02),
+   rgba(255,255,255,0.02) 1px,
+   transparent 1px,
+   transparent 3px
+   );
+   pointer-events:none;
+   z-index:0;
 }
 
 /*Cyber attack animations*/
@@ -76,9 +77,13 @@ overflow:hidden;
 position:absolute;
 height:2px;
 background:linear-gradient(90deg, transparent, #c46efe);
-opacity:.8;
 animation:attackMove linear forwards;
+opacity:0.5;
+animation-duration:3s !important;
 }
+
+
+
 
 @keyframes attackMove{
 from{
@@ -96,13 +101,14 @@ opacity:0;
 ========================= */
 
 #matrixCanvas{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-background:#0f0f14;
+  opacity:0.25;
+   position:fixed;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   z-index:-1;
+   background:#0f0f14;
 }
 
 /* =========================

@@ -16,7 +16,7 @@
     <meta name="twitter:creator" content="@AnnaKwas">
     <meta name="twitter:title" content="Anna Kwas | Cybersecurity Analyst Portfolio">
     <meta name="twitter:description" content="Cybersecurity Analyst specializing in threat detection, SIEM, Linux, and incident response.">
-    <meta name="twitter:image" content="https://a-code1819.github.io/AnnasCV//pics/AnnaKwas.png">
+    <meta name="twitter:image" content="https://a-code1819.github.io/AnnasCV/pics/AnnaKwas.png">
     <meta name="description" content="Cybersecurity Analyst Portfolio. Experience with SIEM, Linux, networking, and incident response.">
     <meta name="author" content="Anna Kwas">
     <title>Anna Kwas | Cybersecurity Analyst Portfolio</title>
@@ -45,6 +45,7 @@
     <div id="cyberAttacks"></div>
     <div id="terminalIntro">
       <div class="terminal-box">
+        <button id="skipIntro" style="float:right">Skip</button>
         <div class="terminal-header">
           <span class="dot red"></span>
           <span class="dot yellow"></span>
@@ -99,11 +100,10 @@
       <div class="row align-items-center g-4 mb-5 reveal">
         <div class="col-md-7">
           <h1 class="h2 mb-3 gradient-text">
-            Detecting threats. Securing systems. 
-            Thinking like an attacker.
+            Hi. I am Anna Kwas, a Junior Cybersecurity Analyst.
           </h1>
           <p class="hero-subtitle text-secondary mb-0">
-            Junior Cybersecurity Analyst specializing in threat detection, network security, and incident response. 
+            I currently specialize in threat detection, network security, and incident response. 
             Passionate about identifying vulnerabilities and protecting systems.
           </p>
         </div>
@@ -118,7 +118,7 @@
             />
         </div>
         <div class="mt-4">
-           <a href="https://a-code1819.github.io/SurveyForm/" class="btn btn-primary me-2"
+           <a href="mailto:amkwas2020@gmail.com" class="btn btn-primary me-2"
               aria-label="Hire me for cybersecurity roles">
            <i class="fa-solid fa-paper-plane me-1"></i> Hire Me
           </a>
@@ -356,22 +356,19 @@
         <br>
         <div class="card card-ghost p-3 mb-4">
           <h4 class="h5">Python Network Scanner</h4>
-
           <p><strong>Tools:</strong> Python, socket, threading</p>
-
-          <ul>
-            <li>Scans local network for active hosts</li>
-            <li>Detects open ports using socket connections</li>
-            <li>Uses threading to accelerate scanning</li>
-            <li>Helps identify potential attack surfaces</li>
-          </ul>
-
-           <div class="mt-2">
-             <a href="https://a-code1819.github.io/NetworkScanner/"
-                target="_blank"
-                class="btn btn-primary">
-                <i class="fa-brands fa-github"></i> View Network Scanner</a>
-           </div>
+            <ul>
+             <li>Scanned local network identifying 15+ active hosts</li>
+             <li>Detected open ports and exposed services across devices</li>
+             <li>Improved scan speed by ~40% using multithreading</li>
+             <li>Simulated real-world reconnaissance phase of an attack</li>
+            </ul>
+          <div class="mt-2">
+            <a href="https://a-code1819.github.io/NetworkScanner/"
+              target="_blank"
+              class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> View Network Scanner</a>
+          </div>
         </div>
         <div class="card card-ghost p-3 mb-4">
           <h4 class="h5">Password Security Detection Tool (PWSD)</h4>
@@ -405,6 +402,19 @@
           <li class="list-group-item">Monitored connected devices and traffic</li>
           <li class="list-group-item">Performed email/data leak exposure checks</li>
         </ul>
+        <br>
+        <div class="card card-ghost p-3 mb-4">
+          <h4 class="h5">SOC Incident Response Simulation (Case Study)</h4>
+          <p><strong>Scenario:</strong> Suspicious login activity detected on a user account.</p>
+
+           <ul>
+            <li>Analyzed logs to identify multiple failed login attempts from foreign IPs</li>
+            <li>Correlated timestamps to detect brute-force attack pattern</li>
+            <li>Simulated SIEM alert triage and escalation process</li>
+            <li>Recommended mitigation: account lockout policies + MFA enforcement</li>
+          </ul>
+          <p><strong>Outcome:</strong> Successfully identified attack vector and reduced risk of unauthorized access.</p>
+        </div>
         <br>
 
         <div id="carouselExampleIndicators" class="carousel slide card-ghost p-2 mb-3">

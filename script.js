@@ -48,6 +48,8 @@ const CyberAttacks = (() => {
   }
 
   return { init };
+
+  try { CyberAttacks.init(); } catch(e){ console.error(e); }
 })();
 
 // ===============================
@@ -233,4 +235,29 @@ document.addEventListener("DOMContentLoaded", () => {
   Navbar.init();
   Matrix.init();
   Terminal.init();
+});
+
+// Skip terminal intro
+const skipBtn = document.getElementById("skipIntro");
+if(skipBtn){
+  skipBtn.addEventListener("click", ()=>{
+    sessionStorage.setItem("introPlayed", "true");
+    document.getElementById("terminalIntro").style.display = "none";
+  });
+}
+
+// Pause cyber attacks when tab hidden
+let attackInterval;
+function startAttacks(){
+  attackInterval = setInterval(()=>{
+    if(window.CyberAttacks) CyberAttacks.init();
+  }, 2500);
+}
+
+document.addEventListener("visibilitychange", ()=>{
+  if(document.hidden){
+    clearInterval(attackInterval);
+  } else {
+    startAttacks();
+  }
 });
