@@ -295,6 +295,11 @@ header.hide{
 transform:translateY(-100%);
 }
 
+.navbar {
+  border-bottom: 1px solid rgba(196,110,254,0.3);
+  box-shadow: 0 0 10px rgba(196,110,254,0.2);
+}
+
 .navbar-brand{
 font-size:1.5rem;
 color:var(--cyber-purple)!important;
@@ -388,22 +393,16 @@ font-size:1.3rem;
 ========================= */
 
 .progress-bar{
-height:10px;
-border-radius:20px;
-background:linear-gradient(90deg,#6a00ff,#a855f7,#c084fc);
-background-size:200% 200%;
-animation:gradientMove 3s ease infinite;
-box-shadow:
-0 0 10px rgba(168,85,247,.7),
-0 0 20px rgba(168,85,247,.5);
+  height:10px;
+  border-radius:20px;
+  /* Clean cyber gradient */
+  background: linear-gradient(
+    90deg,
+    #6a00ff,
+    #9d4edd,
+    #c77dff);
+  box-shadow: 0 0 8px rgba(196,110,254,0.4);
 }
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
 /* =========================
    CARDS
 ========================= */
@@ -631,6 +630,15 @@ margin:auto;
 }
 }
 
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-toggler {
+    margin-right: auto;
+  }
+}
 
 /* Carousel responsive*/
 
