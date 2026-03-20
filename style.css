@@ -637,13 +637,34 @@ main.container {
    align-items: center;
 }
 
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
+/* Force mobile navbar layout so toggler and brand stay level */
+#navbar .container{
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:nowrap;
+}
 
-  .navbar-toggler {
-    margin-right: auto;
-  }
+.navbar-brand {
+  font-size: 1.2rem;
+  line-height:1;
+  padding-top:0;
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+.navbar-toggler {
+  margin-right:0;
+  padding:.45rem .55rem;
+  border:2px solid var(--cyber-purple);
+  background:rgba(196,110,254,0.08);
+  box-shadow:0 0 12px rgba(196,110,254,0.35);
+}
+
+.navbar-toggler-icon{
+  width:1.5em;
+  height:1.5em;
+}
 }
 
 /* Carousel responsive*/
