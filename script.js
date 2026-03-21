@@ -2,8 +2,7 @@
 // CONFIG
 // ===============================
 const CONFIG = {
-  attackInterval: 2500,
-  matrixEnabled: window.innerWidth >= 768
+  matrixEnabled: window.matchMedia("(min-width: 768px)").matches
 };
 
 // ===============================
@@ -13,50 +12,13 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 // ===============================
-// CYBER ATTACK ANIMATION
-// ===============================
-const CyberAttacks = (() => {
-  const layer = $("#cyberAttacks");
-
-  function create() {
-    if (!layer) return;
-
-    const el = document.createElement("div");
-    el.className = "attack";
-
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-
-    const dx = window.innerWidth / 2 - startX;
-    const dy = window.innerHeight / 2 - startY;
-
-    el.style.left = startX + "px";
-    el.style.top = startY + "px";
-    el.style.setProperty("--dx", dx + "px");
-    el.style.setProperty("--dy", dy + "px");
-
-    const duration = 2000 + Math.random() * 2000;
-    el.style.width = (30 + Math.random() * 100) + "px";
-    el.style.animationDuration = duration + "ms";
-
-    layer.appendChild(el);
-    setTimeout(() => el.remove(), duration);
-  }
-
-  function init() {
-    setInterval(create, CONFIG.attackInterval);
-  }
-
-  return { init };
-
-  try { CyberAttacks.init(); } catch(e){ console.error(e); }
-})();
-
-// ===============================
 // SCROLL REVEAL
 // ===============================
 const Reveal = (() => {
   function init() {
+    const elements = $$(".reveal");
+    if (!elements.length) return;
+
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -66,7 +28,7 @@ const Reveal = (() => {
       });
     }, { threshold: 0.15 });
 
-    $$(".reveal").forEach(el => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
   }
 
   return { init };
@@ -77,11 +39,12 @@ const Reveal = (() => {
 // ===============================
 const ProgressBars = (() => {
   function init() {
-    document.querySelectorAll(".progress-bar").forEach(el => {
+    $$(".progress-bar").forEach(el => {
       const pct = el.dataset.progress || 0;
       el.style.width = pct + "%";
     });
   }
+
   return { init };
 })();
 
@@ -89,9 +52,8 @@ const ProgressBars = (() => {
 // BACK TO TOP
 // ===============================
 const BackToTop = (() => {
-  const btn = $("#backToTop");
-
   function init() {
+    const btn = $("#backToTop");
     if (!btn) return;
 
     window.addEventListener("scroll", () => {
@@ -111,19 +73,21 @@ const BackToTop = (() => {
 // ===============================
 const Navbar = (() => {
   let lastScroll = 0;
-  const header = $("header");
 
   function init() {
+    const header = $("header");
+    if (!header) return;
+
     window.addEventListener("scroll", () => {
       const current = window.pageYOffset;
 
       if (current > lastScroll + 10) {
         header.classList.add("hide");
-      } else if (lastScroll > current + 10) {
+      } else if (current < lastScroll - 10) {
         header.classList.remove("hide");
       }
 
-      lastScroll = current <= 0 ? 0 : current;
+      lastScroll = Math.max(current, 0);
     });
   }
 
@@ -135,6 +99,28 @@ const Navbar = (() => {
 // ===============================
 const Matrix = (() => {
   let animationId;
+  const letters = "01".split("");
+  let drops = [];
+
+  function draw(ctx, canvas) {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "rgb(81, 11, 247)";
+    ctx.font = "14px monospace";
+
+    drops.forEach((y, i) => {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * 14, y * 14);
+
+      if (y * 14 > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    });
+
+    animationId = requestAnimationFrame(() => draw(ctx, canvas));
+  }
 
   function init() {
     if (!CONFIG.matrixEnabled) return;
@@ -143,37 +129,22 @@ const Matrix = (() => {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
-    const letters = "01";
-    const drops = Array(Math.floor(canvas.width / 14)).fill(1);
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-    function draw() {
-      ctx.fillStyle = "rgba(15,15,20,0.07)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#c46efe";
-      ctx.font = "14px monospace";
-
-      drops.forEach((y, i) => {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * 14, y * 14);
-
-        if (y * 14 > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      });
-
-      animationId = requestAnimationFrame(draw);
+      const cols = Math.floor(canvas.width / 14) + 1;
+      drops = Array(cols).fill(0);
     }
 
-    draw();
+    window.addEventListener("resize", resize);
+    resize();
+    draw(ctx, canvas);
 
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) cancelAnimationFrame(animationId);
-      else draw();
+      else draw(ctx, canvas);
     });
   }
 
@@ -193,28 +164,33 @@ const Terminal = (() => {
   ];
 
   function init() {
+    const container = $("#terminalIntro");
+    const output = $("#terminalText");
+
+    if (!container || !output) return;
+
     if (sessionStorage.getItem("introPlayed")) {
-      $("#terminalIntro").style.display = "none";
+      container.style.display = "none";
       return;
     }
 
-    const el = $("#terminalText");
     let line = 0, char = 0;
 
     function type() {
       if (line < lines.length) {
         if (char < lines[line].length) {
-          el.textContent += lines[line][char++];
+          output.textContent += lines[line][char++];
           setTimeout(type, 30);
         } else {
-          el.textContent += "\n";
-          line++; char = 0;
+          output.textContent += "\n";
+          line++;
+          char = 0;
           setTimeout(type, 400);
         }
       } else {
         sessionStorage.setItem("introPlayed", "true");
-        $("#terminalIntro").style.opacity = "0";
-        setTimeout(() => $("#terminalIntro").style.display = "none", 800);
+        container.style.opacity = "0";
+        setTimeout(() => (container.style.display = "none"), 800);
       }
     }
 
@@ -225,39 +201,28 @@ const Terminal = (() => {
 })();
 
 // ===============================
+// SKIP INTRO BUTTON
+// ===============================
+(() => {
+  const skipBtn = $("#skipIntro");
+  const intro = $("#terminalIntro");
+
+  if (!skipBtn || !intro) return;
+
+  skipBtn.addEventListener("click", () => {
+    sessionStorage.setItem("introPlayed", "true");
+    intro.style.display = "none";
+  });
+})();
+
+// ===============================
 // INIT APP
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
-  CyberAttacks.init();
   Reveal.init();
   ProgressBars.init();
   BackToTop.init();
   Navbar.init();
   Matrix.init();
   Terminal.init();
-});
-
-// Skip terminal intro
-const skipBtn = document.getElementById("skipIntro");
-if(skipBtn){
-  skipBtn.addEventListener("click", ()=>{
-    sessionStorage.setItem("introPlayed", "true");
-    document.getElementById("terminalIntro").style.display = "none";
-  });
-}
-
-// Pause cyber attacks when tab hidden
-let attackInterval;
-function startAttacks(){
-  attackInterval = setInterval(()=>{
-    if(window.CyberAttacks) CyberAttacks.init();
-  }, 2500);
-}
-
-document.addEventListener("visibilitychange", ()=>{
-  if(document.hidden){
-    clearInterval(attackInterval);
-  } else {
-    startAttacks();
-  }
 });
