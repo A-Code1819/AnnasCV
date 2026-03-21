@@ -520,6 +520,16 @@ section{
 }
 
 /* =========================
+    FOOTER
+========================= */
+footer{
+  text-align:center;
+  padding:1.5rem;
+  font-size:0.9rem;
+  color:#aaa;
+}
+
+/* =========================
    SCROLL REVEAL
 ========================= */
 
