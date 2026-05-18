@@ -216,6 +216,95 @@ const Terminal = (() => {
 })();
 
 // ===============================
+// CURSOR GLOW
+// ===============================
+
+const CursorGlow = (() => {
+  function init() {
+    const glow = document.querySelector(".cursor-glow");
+
+    if (!glow) return;
+
+    window.addEventListener("mousemove", (e) => {
+      glow.style.left = `${e.clientX}px`;
+      glow.style.top = `${e.clientY}px`;
+    });
+  }
+
+  return { init };
+})();
+
+// ===============================
+// MAGNETIC BUTTONS
+// ===============================
+
+const MagneticButtons = (() => {
+
+  function init() {
+
+    document.querySelectorAll(".btn").forEach(btn => {
+
+      btn.addEventListener("mousemove", (e) => {
+
+        const rect = btn.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        btn.style.transform =
+          `translate(${x * 0.15}px, ${y * 0.25}px)`;
+      });
+
+      btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "";
+      });
+    });
+  }
+
+  return { init };
+
+})();
+
+// ===============================
+// ACTIVE NAV LINK
+// ===============================
+
+const ActiveSection = (() => {
+
+  function init() {
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const top = section.offsetTop - 200;
+
+        if (scrollY >= top) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  }
+
+  return { init };
+
+})();
+
+// ===============================
 // INIT APP
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
@@ -225,4 +314,8 @@ document.addEventListener("DOMContentLoaded", () => {
   Navbar.init();
   Matrix.init();
   Terminal.init();
+
+  CursorGlow.init();
+  MagneticButtons.init();
+  ActiveSection.init();
 });

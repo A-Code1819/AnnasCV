@@ -58,6 +58,9 @@
       </div>
     </div>
     <canvas id="matrixCanvas"></canvas>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+    <div class="ambient ambient-3"></div>
 
     <!-- Header / Navbar -->
     <header class="sticky-top">
@@ -90,6 +93,12 @@
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
               </ul>
             </div>
+
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+              
         </div>
       </nav>
     </header>
@@ -97,57 +106,68 @@
     <!-- Main -->
     <main id="home" role="main" class="container py-5 mb-5">
       <!-- Hero -->
-       <section id="hero">
-      <div class="row align-items-center g-4 mb-5 reveal">
-        <div class="col-md-7">
-          <h1 class="h2 mb-3 gradient-text">
-            Hi. I am Anna Kwas, a Junior Cybersecurity Analyst.
-          </h1>
-          <p class="hero-subtitle text-secondary mb-0">
-            I currently specialize in threat detection, network security, and incident response. 
-            Passionate about identifying vulnerabilities and protecting systems.
-          </p>
-        </div>
-        <div class="col-md-5 text-center">
-          <img
-            src="./pics/annakwas.png"
-            alt="Anna Kwas Portrait"
-            class="img-fluid hero-img"
-            width="400"
-            height="400"
-            loading="lazy"
-            decoding="async"
-            />
-        </div>
-        <div class="mt-4">
-           <a href="https://mail.google.com/mail/?view=cm&to=amkwas2020@gmail.com" class="btn btn-primary me-2"
-              aria-label="Hire me for cybersecurity roles">
-           <i class="fa-solid fa-paper-plane me-1"></i> Hire Me
-          </a>
+      <section id="hero" class="reveal">
+         <div class="hero-grid"></div>
 
-          <a href="AnnaKwasCV.pdf" class="btn btn-secondary me-2" download aria-label="Download my resume">
-             <i class="fa-solid fa-file-arrow-down me-1"></i> Download CV
-          </a>
-  
-          <a href="#projects" class="btn btn-primary me-2" aria-label="View my cybersecurity projects">See My Work
-          </a>
+         <div class="hero-content">
+            <div class="hero-badge">
+              <span></span>
+              Cybersecurity Analyst • SOC Pathway
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm Anna. <br>
+              <span> I Secure Digital Infrastructure and Protect Data.</span>
+            </h1>
+
+            <p class="hero-description">
+              Junior Cybersecurity Analyst focused on threat detection,
+              SIEM operations, incident response, network defense,
+              and secure system architecture.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                View Projects
+              </a>
+
+              <a href="AnnaKwasCV.pdf" download class="btn btn-outline-light">
+                Download CV
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-card">
+                <h3>18+</h3>
+                <p>Months Learning Cybersecurity</p>
+              </div>
+
+              <div class="stat-card">
+                <h3>5+</h3>
+                <p>Security Projects</p>
+              </div>
+
+              <div class="stat-card">
+                <h3>3</h3>
+                <p>Industry Certifications</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      </section>
-      <!-- About -->
-      <section id="about" class="mb-5 reveal">
-        <h2 class="section-title h3 mb-3">About Me</h2>
-        <p>
-          Cybersecurity-focused professional with a background in web development and IT support. 
-          Experienced in troubleshooting, system security fundamentals, and network analysis. 
-          Over the past 18 months, I have dedicated myself to developing practical knowledge in 
-          SIEM tools, Linux systems, and incident response methodologies.
 
-          Driven by continuous learning and a strong analytical mindset, 
-          I am seeking a Junior Cybersecurity or SOC Analyst role where I can contribute to 
-          protecting systems and strengthening organizational security posture.
-        </p>
-      </section>
+      <div class="hero-image-wrapper">
+         <div class="hero-ring"></div>
+         <div class="hero-ring ring-2"></div>
+
+        <img
+          src="./pics/annakwas.png"
+          alt="Anna Kwas Portrait"
+          class="hero-img"
+        />
+      </div>
+    </section>
+     <br>
 
       <!-- Skills -->
       <section id="skills" class="mb-5 reveal">
@@ -218,7 +238,7 @@
             and fare prices meeting with customer needs.
           </p>
         </article>
-        
+        <br>
         <article class="card card-ghost p-3">
           <h4 class="h5 mb-1">AI Teacher | Christian American School (CAS) <span class="text-white-50">| August 2025 - October 2025</span></h4>
           <p class="mb-0">
@@ -228,7 +248,7 @@
             teaching them algorithms and study projects.
           </p>
         </article>
-        
+        <br>
         <article class="card card-ghost p-3">
           <h4 class="h5 mb-1">Technical Support |Teleperformance (COX Communications Account) <span class="text-white-50">| October 2023 - December 2023</span></h4>
           <p class="mb-0">
@@ -243,201 +263,166 @@
 
       <!-- Education -->
       <section id="education" class="mb-5 reveal">
-        <h3 class="section-title h4 mb-4">My Education</h3>
+        <h3 class="section-title h4 mb-3">My Education</h3>
+        <article class="card card-ghost p-3">
+          <h4 class="h5 mb-1">Highschool Diploma <span class="text-white-50">| 2016 - 2020</span></h4>
+          <p class="mb-0">
+            12 Stone Academy, Miami, Florida, USA
+          </p>
+        </article>
+      </section>
 
+      <!-- Certifications -->
+      <section id="certifications" class="mb-5 reveal">
+        <h3 class="section-title h4 mb-3">My Certifications</h3>
         <div class="row g-4">
-          <div class="col-12">
-            <div class="card card-ghost h-100">
-              <div class="card-body">
-                <h4 class="h6 mb-2">Google <strong>Cybersecurity Analyst</strong> | August 2024</h4>
-                <p class="mb-3">
-                  8 courses with hands-on assessments: Python (beginner), Linux, SQL, SIEM tools and IDS; risk,
-                  threats and vulnerabilities; mitigation techniques.
-                </p>
-                <img
-                  src="./pics/cybersecert.png"
-                  alt="Google Cybersecurity Analyst Certificate"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-ghost h-100 text-center p-3">
+              <img
+                src="./pics/cybersecert.png"
+                alt="Google Cybersecurity Analyst Certificate"
+                class="img-fluid rounded mb-3"
+                style="max-height: 150px; object-fit: cover;"
+                loading="lazy"
+                decoding="async"
+              />
+              <h4 class="h6 mb-1">Google Cybersecurity Analyst</h4>
+              <p>Comprehensive training in cybersecurity fundamentals, including threat detection, SIEM tools, Linux, and incident response.</p>
             </div>
           </div>
 
-      
-          <div class="col-md-6">
-            <div class="card card-ghost h-100">
-              <div class="card-body">
-                <h4 class="h6 mb-2">CompTIA Diploma<strong> Security+ Exam SYO-501</strong> | August 2023</h4>
-                <p class="mb-3">
-                  Fundamental knowledge required of any cybersecurity role and provides a springboard to intermediate-level
-                  cybersecurity jobs. From risk management to incident response, this certification covers the essential principles for network security and risk management.
-                </p>
-                <img
-                  src="./pics/comptia.jpeg"
-                  alt="CompTIA Security Cert"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-ghost h-100 text-center p-3">
+              <img
+                src="./pics/comptia.jpeg"
+                alt="CompTIA Security Cert"
+                class="img-fluid rounded mb-3"
+                style="max-height: 150px; object-fit: cover;"
+                loading="lazy"
+                decoding="async"
+              />
+              <h4 class="h6 mb-1">CompTIA Security+ SYO-501</h4>
+              <p>Validated foundational cybersecurity skills and knowledge required for entry-level security roles.</p>
             </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="card card-ghost h-100">
-              <div class="card-body">
-                <h4 class="h6 mb-2">Google <strong>IT Support</strong> | February 2023</h4>
-                <p class="mb-3">
-                  Entry-level IT support: networking, operating systems, system administration and security with
-                  practical assessments and customer service orientation.
-                </p>
-                <img
-                  src="./pics/itcert.png"
-                  alt="Google IT Support Certificate"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card card-ghost h-100">
-              <div class="card-body">
-                <h4 class="h6 mb-2">Generation <strong>Web Development</strong> | December 2021</h4>
-                <p class="mb-3">
-                  12-week program in HTML, CSS, JavaScript and UX-oriented front-end projects.
-                </p>
-                <img
-                  src="./pics/generationcert.png"
-                  alt="Generation Web Development Certificate"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card card-ghost h-100">
-              <div class="card-body">
-                <h4 class="h6 mb-2">University of London <strong>Coding Basics</strong> | November 2021</h4>
-                <p class="mb-3">
-                  Problem-solving in real scenarios and building a responsive web page with HTML, CSS, JavaScript, and Bootstrap.
-                </p>
-                <img
-                  src="./pics/codingbasic.jpg"
-                  alt="University of London Coding Basics Certificate"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="card card-ghost">
-              <div class="card-body">
-                <h4 class="h6 mb-1">High School Diploma | December 2020</h4>
-                <p class="mb-3">Graduated with a 3.14 GPA. Miami, FL.</p>
-                <img
-                  src="./pics/highschooldiploma.jpg"
-                  alt="High School Diploma"
-                  class="img-fluid rounded"
-                  style="max-height: 180px; object-fit: cover;"
-                  loading="lazy"
-                  decoding="async"
-                  />
-              </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-ghost h-100 text-center p-3">
+              <img
+                src="./pics/itcert.png"
+                alt="Google IT Support Certificate"
+                class="img-fluid rounded mb-3"
+                style="max-height: 150px; object-fit: cover;"
+                loading="lazy"
+                decoding="async"
+              />
+              <h4 class="h6 mb-1">Google IT Support</h4>
+              <p>Entry-level IT support skills including troubleshooting, customer service, and foundational IT knowledge.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects -->
-      <section id="projects" class="mb-5 reveal cyber-glow">
+      <!--Projects-->
+      <section id="projects" class="mb-5 reveal">
         <h3 class="section-title h4 mb-3">My Projects</h3>
         <br>
-        <div class="card card-ghost p-3 mb-4">
-          <h4 class="h5">Python Network Scanner</h4>
-          <p><strong>Tools:</strong> Python, socket, threading</p>
-            <ul>
-             <li>Identified 15+ active hosts and exposed services</li>
-             <li>Detected open ports and exposed services across devices</li>
-             <li>Improved scan speed by ~40% using multithreading</li>
-             <li>Simulated real-world reconnaissance phase of an attack</li>
-            </ul>
-          <div class="mt-2">
+        <div class="project-top">
+          <span class="project-tag">Python Security Tool</span>
+
+          <h3>Python Network Scanner</h3>
+
+          <p>
+            Multi-threaded network reconnaissance scanner capable
+            of identifying active hosts, exposed ports, and
+            vulnerable services across local infrastructure.
+          </p>
+        </div>
+
+      <div class="project-metrics">
+          <div>
+            <strong>40%</strong>
+            <span>Faster Scanning</span>
+          </div>
+        <div>
+          <strong>15+</strong>
+          <span>Hosts Detected</span>
+        </div>
+
+        <div>
+          <strong>Python</strong>
+          <span>Socket / Threading</span>
+        </div>
+      </div>
+      &nbsp;
+        <p><strong>Tools:</strong> Python, socket, threading</p>
+          <ul>
+            <li>Identified 15+ active hosts and exposed services</li>
+            <li>Detected open ports and exposed services across devices</li>
+            <li>Improved scan speed by ~40% using multithreading</li>
+            <li>Simulated real-world reconnaissance phase of an attack</li>
+          </ul>
+          <div class="project-buttons">
             <a href="https://a-code1819.github.io/NetworkScanner/"
               target="_blank"
               class="btn btn-primary">
             <i class="fa-brands fa-github"></i> View Network Scanner</a>
           </div>
-        </div>
-        <div class="card card-ghost p-3 mb-4">
-          <h4 class="h5">Password Security Detection Tool (PWSD)</h4>
+          <br>
+          <div class="card card-ghost p-3 mb-4">
+            <h3>Password Security Detection Tool (PWSD)</h3>
 
-          <p>
-            Developed a Python-based password security tool designed to evaluate
-            password strength and detect common vulnerabilities. The program analyzes
-            password complexity, checks for common patterns, and helps users improve
-            their password security practices.
-          </p>
-          <div class="mt-2">
-            <a href="https://a-code1819.github.io/Cybersecurity-pswd-tool/"
-               target="_blank"
-               class="btn btn-primary">
-              <i class="fa-brands fa-github"></i> View Password Tool
-            </a>
+            <p>
+              Developed a Python-based password security tool designed to evaluate
+              password strength and detect common vulnerabilities. The program analyzes
+              password complexity, checks for common patterns, and helps users improve
+              their password security practices.
+            </p>
+            <div class="mt-2">
+              <a href="https://a-code1819.github.io/Cybersecurity-pswd-tool/"
+                 target="_blank"
+                class="btn btn-primary">
+                <i class="fa-brands fa-github"></i> View Password Tool
+              </a>
+            </div>
           </div>
-        </div>
-        <h3 class="card-header card-body">Home Network Security Hardening</h3>
-        <p class="card-text">
-          Designed and maintained a secure home network environment by implementing 
-          modern encryption protocols, firewall configurations, firmware updates, 
-          and device access control. Conducted data exposure evaluations and 
-          applied security best practices to minimize risk.
-        </p>
+          <br>
+          <h3>Home Network Security Hardening</h3>
+          <p class="card-text">
+            Designed and maintained a secure home network environment by implementing 
+            modern encryption protocols, firewall configurations, firmware updates, 
+            and device access control. Conducted data exposure evaluations and 
+            applied security best practices to minimize risk.
+          </p>
 
-        <ul class="list-group list-group-flush mb-4">
-          <li class="list-group-item">Configured WPA3 encryption & disabled insecure protocols</li>
-          <li class="list-group-item">Updated router firmware and patched vulnerabilities</li>
-          <li class="list-group-item">Segmented devices where applicable</li>
-          <li class="list-group-item">Monitored connected devices and traffic</li>
-          <li class="list-group-item">Performed email/data leak exposure checks</li>
-        </ul>
-        <br>
-        <div class="card card-ghost p-3 mb-4">
-          <h4 class="h5">SOC Incident Response Simulation (Case Study)</h4>
-          <p><strong>Scenario:</strong> Suspicious login activity detected on a user account.</p>
-
-           <ul>
-            <li>Analyzed logs to identify multiple failed login attempts from foreign IPs</li>
-            <li>Correlated timestamps to detect brute-force attack pattern</li>
-            <li>Simulated SIEM alert triage and escalation process</li>
-            <li>Recommended mitigation: account lockout policies + MFA enforcement</li>
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item">Configured WPA3 encryption & disabled insecure protocols</li>
+            <li class="list-group-item">Updated router firmware and patched vulnerabilities</li>
+            <li class="list-group-item">Segmented devices where applicable</li>
+            <li class="list-group-item">Monitored connected devices and traffic</li>
+            <li class="list-group-item">Performed email/data leak exposure checks</li>
           </ul>
-          <p><strong>Outcome:</strong> Successfully identified attack vector and reduced risk of unauthorized access.</p>
-        </div>
-        <br>
-
-        <div id="carouselExampleIndicators" class="carousel slide card-ghost p-2 mb-3">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <br>
+          <div class="card card-ghost p-3 mb-4">
+            <h3>SOC Incident Response Simulation (Case Study)</h3>
+            <p><strong>Scenario:</strong> Suspicious login activity detected on a user account.</p>
+            <ul>
+              <li>Analyzed logs to identify multiple failed login attempts from foreign IPs</li>
+              <li>Correlated timestamps to detect brute-force attack pattern</li>
+              <li>Simulated SIEM alert triage and escalation process</li>
+              <li>Recommended mitigation: account lockout policies + MFA enforcement</li>
+            </ul>
+            <p><strong>Outcome:</strong> Successfully identified attack vector and reduced risk of unauthorized access.</p>
+          </div>
+          <br>
+          <h3>Web Development Projects</h3>
+          <div id="carouselExampleIndicators" class="carousel slide card-ghost p-2 mb-3">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
           </div>
 
           <div class="carousel-inner rounded">
@@ -503,7 +488,11 @@
 
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="email" class="form-control" id="email" name="_replyto" placeholder="email@example.com" required />
+                <input type="email" 
+                class="form-control" 
+                id="email" 
+                name="_replyto" 
+                placeholder="email@example.com" required />
                 <label for="email">Email</label>
               </div>
             </div>
@@ -542,7 +531,7 @@
           <a class="btn btn-outline-light btn-sm" href="https://linkedin.com/in/annakwas/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
             <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
           </a>
-          <a class="btn btn-outline-light btn-sm" href="https://wa.me/50247832193?text=Hi%20Anna,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" aria-label="Text Me">
+          <a class="btn btn-outline-light btn-sm" href="https://wa.me/50247832193" target="_blank" aria-label="Text Me">
             <i class="fa-brands fa-whatsapp"></i> +(502)4783-2193
           </a>
          <a href="https://mail.google.com/mail/?view=cm&to=amkwas2020@gmail.com" target="_blank" class="btn btn-outline-light btn-sm">
@@ -554,8 +543,8 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
-    <script type="application/ld+json">
+<!-- Scripts -->
+<script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -567,8 +556,8 @@
         "https://linkedin.com/in/annakwas"
         ]
       }
-    </script>
-    <script type="application/ld+json">
+</script>
+<script type="application/ld+json">
       {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -582,6 +571,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
     crossorigin="anonymous">
-    </script>
+</script>
+<div class="cursor-glow"></div>
 </body>
 </html>
