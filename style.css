@@ -1029,57 +1029,136 @@ footer{
 
 @media(max-width:768px){
 
-  body{
-    padding-top:80px;
-  }
-
-  section{
-    padding:3rem 1.25rem;
-    border-radius:22px;
-  }
+  /* =========================
+     HERO LAYOUT
+  ========================= */
 
   #hero{
     flex-direction:column-reverse;
 
+    justify-content:center;
+    align-items:center;
+
     text-align:center;
 
-    gap:3rem;
+    gap:2rem;
+
+    padding:
+      3rem
+      1.2rem
+      4rem;
+
+    min-height:auto;
+
+    overflow:hidden;
+  }
+
+  /* =========================
+     HERO CONTENT
+  ========================= */
+
+  .hero-content{
+    width:100%;
+    z-index:5;
   }
 
   .hero-title{
-    font-size:3rem;
+    font-size:clamp(2.4rem,12vw,4rem);
+
+    line-height:1.02;
+
+    max-width:100%;
+
+    margin:
+      0 auto
+      1.5rem;
+
+    word-break:break-word;
+  }
+
+  .hero-title span{
+    display:block;
+
+    width:100%;
+
+    overflow-wrap:break-word;
   }
 
   .hero-description{
     margin:auto;
+
+    font-size:1rem;
+
+    max-width:95%;
+  }
+
+  /* =========================
+     HERO IMAGE
+  ========================= */
+
+  .hero-image-wrapper{
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transform:none;
+
+    overflow:visible;
   }
 
   .hero-ring{
-    width:280px;
-    height:280px;
+    width:260px;
+    height:260px;
   }
 
   .ring-2{
-    width:340px;
-    height:340px;
+    width:320px;
+    height:320px;
   }
 
   .hero-img{
-    width:220px;
+    width:200px;
+    max-width:72vw;
+
+    object-fit:cover;
   }
+
+  /* =========================
+     BUTTONS
+  ========================= */
 
   .hero-buttons{
     justify-content:center;
+
+    gap:.8rem;
   }
 
-  .project-metrics{
+  .hero-buttons .btn{
+    width:auto;
+  }
+
+  /* =========================
+     STATS
+  ========================= */
+
+  .hero-stats{
     flex-direction:column;
-    gap:1rem;
+
+    align-items:center;
+
+    width:100%;
   }
 
-  .navbar-nav{
-    gap:10px;
+  .stat-card{
+    width:100%;
+    max-width:320px;
   }
+
+  /* =========================
+     PERFORMANCE
+  ========================= */
 
   #matrixCanvas{
     display:none;
@@ -1088,10 +1167,10 @@ footer{
   .cursor-glow{
     display:none;
   }
-}
 
-@media(max-width:768px){
-
+    /* =========================
+      NAVBAR
+  ========================= */
   .hamburger{
     display:block;
     z-index:1001;
