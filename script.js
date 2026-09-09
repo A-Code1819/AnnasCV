@@ -151,69 +151,6 @@ const Matrix = (() => {
   return { init };
 })();
 
-// ===============================
-// TERMINAL INTRO
-// ===============================
-const Terminal = (() => {
-  const lines = [
-    "> initializing security interface...",
-    "> connecting to github repositories...",
-    "> loading projects...",
-    "> verifying credentials...",
-    "> access granted"
-  ];
-
-  function init() {
-    const container = $("#terminalIntro");
-    const output = $("#terminalText");
-
-    if (!container || !output) return;
-
-    if (sessionStorage.getItem("introPlayed")) {
-      container.style.display = "none";
-      return;
-    }
-
-    let line = 0, char = 0;
-
-    function type() {
-      if (line < lines.length) {
-        if (char < lines[line].length) {
-          output.textContent += lines[line][char++];
-          setTimeout(type, 30);
-        } else {
-          output.textContent += "\n";
-          line++;
-          char = 0;
-          setTimeout(type, 400);
-        }
-      } else {
-        sessionStorage.setItem("introPlayed", "true");
-        container.style.opacity = "0";
-        setTimeout(() => (container.style.display = "none"), 800);
-      }
-    }
-
-    type();
-  }
-
-  return { init };
-})();
-
-// ===============================
-// SKIP INTRO BUTTON
-// ===============================
-(() => {
-  const skipBtn = $("#skipIntro");
-  const intro = $("#terminalIntro");
-
-  if (!skipBtn || !intro) return;
-
-  skipBtn.addEventListener("click", () => {
-    sessionStorage.setItem("introPlayed", "true");
-    intro.style.display = "none";
-  });
-})();
 
 // ===============================
 // CURSOR GLOW
@@ -313,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
   BackToTop.init();
   Navbar.init();
   Matrix.init();
-  Terminal.init();
+
 
   CursorGlow.init();
   MagneticButtons.init();
